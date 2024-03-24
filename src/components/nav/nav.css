@@ -1,0 +1,127 @@
+.nav{
+    width: 100%;
+    z-index: 99;
+    background: transparent;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-menu{
+    display: flex;
+    gap: 4em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.nav-logo{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    color: black;
+}
+.nav img{
+    width: 2em;
+}
+
+
+.nav-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+}
+.nav p{
+    margin: 0;
+    color: white;
+}
+
+.link{
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 500;
+}
+
+.nav-menu > div{
+    display: flex;
+    align-items: center;
+}
+.nav-menu > div li{
+    list-style-type: none;
+    margin: 0;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.nav-menu-btn{
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 0em;
+    color: white;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.nav-right span{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    white-space: nowrap;
+}
+.nav-cta-btn{
+    width: max-content;
+    background: white;
+    border: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    color: var(--font-clr);
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 980px){
+    
+}
+
+@media only screen and (max-width: 480px){
+    .nav-menu{
+        padding: 2em 1em;
+    }
+    .link{
+        display: none;
+    }
+    .nav-menu-btn{
+        display: flex;
+    }
+    .nav-right span{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    
+}

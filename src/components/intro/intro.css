@@ -1,0 +1,51 @@
+.intro{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+    overflow: hidden;
+    padding: 4em 2em;
+}
+
+.intro-img{
+    overflow: hidden;
+}
+.intro-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro > div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+.intro > div p{
+    font-size: 2rem;
+    line-height: 1.1em;
+    color: var(--font-clr);
+}
+.intro > div small{
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--font-light);
+}
+
+
+@media only screen and (max-width: 480px){
+    .intro > div{
+        width: 100%;
+    }
+    .intro > div p{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    
+}

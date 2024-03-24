@@ -1,0 +1,105 @@
+.services{
+    width: 100%;
+    padding: 4em 2em;
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.services h2{
+    color: var(--font-clr);
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.services-top{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1em;
+}
+.service{
+    width: 35%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 4em 1em;
+    border-radius: 10px;
+    transform-origin: left;
+    background: white;
+    border: 1px solid rgb(230, 230, 230);
+}
+.service-top{
+    width: 100%;
+    height: 200px;
+    background: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.service-top img{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service span{
+    color: var(--font-clr);
+    font-size: 4rem;
+}
+.service p{
+    color: black;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1em;
+}
+.service small{
+    color: black;
+    font-size: 1rem;
+    line-height: 1.5em;
+}
+
+
+.services-bottom{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+}
+.services-bottom > div{
+    width: 25%;
+    padding: 4em;
+    border-right: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.services-bottom > div p{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.services-bottom > div small{
+    color: rgb(217, 217, 217);
+    font-size: 0.9rem;
+    line-height: 1.5em;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 980px){
+    
+}
+
+@media only screen and (max-width: 480px){
+    .services{
+        padding: 1em;
+    }
+    .service{
+        width: 100%;
+    }
+    .service p{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    
+}
