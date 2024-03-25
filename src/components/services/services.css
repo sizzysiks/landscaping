@@ -6,15 +6,29 @@
     flex-direction: column;
     gap: 2em;
 }
+
+.services-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .services h2{
     color: var(--font-clr);
     font-weight: 500;
     font-size: 2rem;
 }
+.services-title > span{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .services-top{
     display: flex;
     flex-wrap: nowrap;
+    overflow-x: hidden;
     gap: 1em;
 }
 .service{
@@ -45,17 +59,23 @@
 .service span{
     color: var(--font-clr);
     font-size: 4rem;
+    user-select: none;
+    pointer-events: none;
 }
 .service p{
     color: black;
     font-size: 2rem;
     font-weight: 400;
     line-height: 1em;
+    user-select: none;
+    pointer-events: none;
 }
 .service small{
     color: black;
     font-size: 1rem;
     line-height: 1.5em;
+    user-select: none;
+    pointer-events: none;
 }
 
 
@@ -91,6 +111,9 @@
 @media only screen and (max-width: 480px){
     .services{
         padding: 1em;
+    }
+    .services h2{
+        font-size: 1.5rem;
     }
     .service{
         width: 100%;

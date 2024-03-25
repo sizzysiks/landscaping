@@ -1,14 +1,10 @@
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef, useState } from 'react';
 import './services.css'
-
-import { FaLongArrowAltRight } from "react-icons/fa";
 
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaTools } from "react-icons/fa";
 import { FaScissors } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function Services (){
     const wrapperRef = useRef(null)
@@ -17,56 +13,66 @@ export default function Services (){
     const srv3 = useRef(null)
     const srv4 = useRef(null)
 
-    useGSAP(() => {
-        // Register ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
+    const containerRef = useRef(null);
+    const [dragging, setDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+  
+    const handleMouseDown = (event) => {
+      setDragging(true);
+      setStartX(event.pageX - containerRef.current.offsetLeft);
+      setScrollLeft(containerRef.current.scrollLeft);
+    };
+  
+    const handleMouseUp = () => {
+      setDragging(false);
+    };
+  
+    const handleMouseMove = (event) => {
+      if (!dragging) return;
+      const x = event.pageX - containerRef.current.offsetLeft;
+      const walk = (x - startX) * 2; // You can adjust the multiplier to control the sensitivity of the slider
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    };
 
-        gsap.fromTo(srv1.current, { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' }, {
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-            scrollTrigger: {
-              trigger: wrapperRef.current,
-              start: 'top 50%',
-              end: 'bottom top', // Trigger end position
-            },
-            duration: 0.4
-        });
-        
-        gsap.fromTo(srv2.current, { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' }, {
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-            scrollTrigger: {
-              trigger: wrapperRef.current,
-              start: 'top 50%',
-              end: 'bottom top',
-            },
-            duration: 0.6
-        });
-
-        gsap.fromTo(srv3.current, { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' }, {
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-            scrollTrigger: {
-              trigger: wrapperRef.current,
-              start: 'top 50%',
-              end: 'bottom top', // Trigger end position
-            },
-            duration: 0.8
-        });
-
-        gsap.fromTo(srv4.current, { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' }, {
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-            scrollTrigger: {
-              trigger: wrapperRef.current,
-              start: 'top 50%',
-              end: 'bottom top', // Trigger end position
-            },
-            duration: 1
-        });
-    }, { dependencies: [] });
+    const handleTouchStart = (event) => {
+        setDragging(true);
+        const touch = event.touches[0];
+        setStartX(touch.pageX - containerRef.current.offsetLeft);
+        setScrollLeft(containerRef.current.scrollLeft);
+    };
+    
+    const handleTouchMove = (event) => {
+        if (!dragging || !event.touches[0]) return;
+        const touch = event.touches[0];
+        const x = touch.pageX - containerRef.current.offsetLeft;
+        const walk = (x - startX) * 2; // You can adjust the multiplier to control the sensitivity of the slider
+        containerRef.current.scrollLeft = scrollLeft - walk;
+    };
+    
+    const handleTouchEnd = () => {
+        setDragging(false);
+    };
 
     return(
         <section className="services" ref={wrapperRef}>
-            <h2>What services do we offer</h2>
+            <div className="services-title">
+                <h2>What services do we offer</h2>
+                <span><FaArrowRightLong/></span>
+            </div>
 
-            <div className="services-top">
+            <div 
+                className="services-top" 
+                ref={containerRef} 
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseUp}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onTouchCancel={handleTouchEnd} // In case touch is cancelled
+            >
                 <div ref={srv1} className="service">
                     {/* <div className="service-top">
                         <img src={serv1} alt="" />
