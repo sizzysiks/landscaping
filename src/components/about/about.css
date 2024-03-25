@@ -1,5 +1,6 @@
 .about-content{
     padding: 4em 2em;
+    padding-top: 8em;
     display: flex;
     flex-direction: column;
     gap: 4em;
@@ -70,4 +71,43 @@
 }
 .about-achievements > div small{
     width: 50%;
+}
+
+
+@media only screen and (max-width: 980px){
+    
+}
+
+@media only screen and (max-width: 480px){
+    .about-content{
+        padding: 1em;
+        padding-top: 8em;
+    }
+    .about-top h1{
+        font-size: 2rem;
+    }
+    .about-content p{
+        font-size: 1.2rem;
+    }
+
+    .about-achievements{
+        gap: 2em;
+    }
+    .about-achievements > div{
+        padding: 0;
+        flex-direction: column;
+        gap: 1em;
+        border-bottom: none;
+    }
+    .about-achievements > div p{
+        font-size: 2rem;
+        width: 100%;
+    }
+    .about-achievements > div small{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    
 }

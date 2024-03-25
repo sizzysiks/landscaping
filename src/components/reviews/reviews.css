@@ -32,9 +32,6 @@
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.card:nth-child(2){
-    background: var(--blue-dark);
-}
 .card-top{
     display: flex;
     align-items: center;
@@ -66,19 +63,9 @@
 .card p{
     font-size: 1.5rem;
 }
-.card:nth-child(2) p{
-    color: white;
-}
 .card small{
     font-size: 1rem;
     line-height: 1.5em;
-}
-.card:nth-child(2) small{
-    color: white;
-}
-.card:nth-child(2) button{
-    background: yellow;
-    color: var(--font-clr);
 }
 
 /* MEDIA QUERIES */

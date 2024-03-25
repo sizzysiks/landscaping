@@ -12,18 +12,17 @@ import ServicesPage from './pages/ServicesPage'
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
-  const [doUnmountAnimation, setDoUnmountAnimation] = useState(false)
 
   return (
     <HelmetProvider>
     <BrowserRouter>
-      {menuIsOpen && <Menu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} doUnmountAnimation={doUnmountAnimation} setDoUnmountAnimation={setDoUnmountAnimation} />}
+      {menuIsOpen && <Menu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />}
       <Routes>
-        <Route path="/" element={<Home menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} doUnmountAnimation={doUnmountAnimation} setDoUnmountAnimation={setDoUnmountAnimation} />} />
-        <Route path='/about' element={<About menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} doUnmountAnimation={doUnmountAnimation} setDoUnmountAnimation={setDoUnmountAnimation} />} />
-        <Route path='/work' element={<Work menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} doUnmountAnimation={doUnmountAnimation} setDoUnmountAnimation={setDoUnmountAnimation} />} />
-        <Route path='/contact' element={<Contact menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} doUnmountAnimation={doUnmountAnimation} setDoUnmountAnimation={setDoUnmountAnimation} />} />
-        <Route path='/services' element={<ServicesPage menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} doUnmountAnimation={doUnmountAnimation} setDoUnmountAnimation={setDoUnmountAnimation} />} />
+        <Route path="/" element={<Home menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />} />
+        <Route path='/about' element={<About menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />} />
+        <Route path='/work' element={<Work menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />} />
+        <Route path='/contact' element={<Contact menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />} />
+        <Route path='/services/:type' element={<ServicesPage menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />} />
       </Routes>
     </BrowserRouter>
     </HelmetProvider>

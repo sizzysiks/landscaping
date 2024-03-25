@@ -1,4 +1,7 @@
 import { useRef, useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './services.css'
 
 import { MdOutlineDesignServices } from "react-icons/md";
@@ -6,12 +9,11 @@ import { FaTools } from "react-icons/fa";
 import { FaScissors } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+import cover from '../../assets/cover1.png'
+
 export default function Services (){
     const wrapperRef = useRef(null)
-    const srv1 = useRef(null)
-    const srv2 = useRef(null)
-    const srv3 = useRef(null)
-    const srv4 = useRef(null)
+    const coverRef = useRef(null)
 
     const containerRef = useRef(null);
     const [dragging, setDragging] = useState(false);
@@ -54,8 +56,28 @@ export default function Services (){
         setDragging(false);
     };
 
+    useGSAP(() => {
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo(coverRef.current, { scale: 1 }, {
+            scale: 1.2,
+            scrollTrigger: {
+              trigger: wrapperRef.current,
+              start: 'top 50%',
+              scrub: true,
+              end: 'bottom top', // Trigger end position
+            },
+            duration: 0.4
+        });
+    }, { dependencies: [] });
+
     return(
         <section className="services" ref={wrapperRef}>
+            <div className="services-cover">
+                <img src={cover} alt="" ref={coverRef} />
+            </div>
+
             <div className="services-title">
                 <h2>What services do we offer</h2>
                 <span><FaArrowRightLong/></span>
@@ -73,10 +95,7 @@ export default function Services (){
                 onTouchEnd={handleTouchEnd}
                 onTouchCancel={handleTouchEnd} // In case touch is cancelled
             >
-                <div ref={srv1} className="service">
-                    {/* <div className="service-top">
-                        <img src={serv1} alt="" />
-                    </div> */}
+                <div className="service">
                     <span><MdOutlineDesignServices /></span>
 
                     <small>01</small>
@@ -85,11 +104,7 @@ export default function Services (){
                     <button className='main-btn'>Read more</button>
                 </div>
 
-                <div ref={srv2} className="service">
-                    {/* <div className="service-top">
-                        <img src={serv2} alt="" />
-                    </div> */}
-
+                <div className="service">
                     <span><FaTools /></span>
                     <small>02</small>
                     <p>Lawn Care and Maintenance</p>
@@ -97,11 +112,7 @@ export default function Services (){
                     <button className='main-btn'>Read more</button>
                 </div>
 
-                <div ref={srv3} className="service">
-                    {/* <div className="service-top">
-                        <img src={serv3} alt="" />
-                    </div> */}
-                    
+                <div className="service">                                  
                     <span><FaScissors /></span>
                     <small>03</small>
                     <p>Hardscaping and Outdoor Living Spaces</p>
@@ -109,11 +120,7 @@ export default function Services (){
                     <button className='main-btn'>Read more</button>
                 </div>
 
-                <div ref={srv4} className="service">
-                    {/* <div className="service-top">
-                        <img src={serv4} alt="" />
-                    </div> */}
-
+                <div className="service">                 
                     <span>04</span>
                     <p>Landscape Renovation and Enhancement</p>
                     <small>Revitalize your existing landscape with our renovation and enhancement services, which may include plantings, irrigation upgrades, lighting installations, and sustainable landscaping solutions to breathe new life into your outdoor space.</small>

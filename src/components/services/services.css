@@ -1,10 +1,26 @@
 .services{
+    position: relative;
     width: 100%;
     padding: 4em 2em;
+    padding-right: 0;
     background: #f1f1f1;
     display: flex;
     flex-direction: column;
     gap: 2em;
+}
+.services-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+.services-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .services-title{
@@ -13,7 +29,7 @@
     justify-content: space-between;
 }
 .services h2{
-    color: var(--font-clr);
+    color: white;
     font-weight: 500;
     font-size: 2rem;
 }
@@ -26,6 +42,8 @@
 
 
 .services-top{
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: hidden;

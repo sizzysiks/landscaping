@@ -9,7 +9,7 @@ import MenuInfo from './MenuInfo'
 import MenuServices from './MenuServices'
 import Nav from '../nav/Nav'
 
-export default function Menu ({ menuIsOpen, setMenuIsOpen, doUnmountAnimation, setDoUnmountAnimation }){
+export default function Menu ({ menuIsOpen, setMenuIsOpen }){
     const wrapperRef = useRef(null)
 
     useGSAP(()=>{
@@ -19,12 +19,6 @@ export default function Menu ({ menuIsOpen, setMenuIsOpen, doUnmountAnimation, s
           gsap.fromTo(wrapper, { y: '-100%' }, { y: 0, duration: 0.4, ease: "expo.out" });
         }
     }, { dependencies: [wrapperRef.current] })
-
-    useGSAP(()=>{
-        if(doUnmountAnimation){
-            gsap.fromTo(wrapperRef.current, { y: 0 }, { y: '-100%', duration: 0.4, ease: "expo.out" });
-        }
-    }, { dependencies: [doUnmountAnimation] })
 
     return(
         <div className="menu" ref={wrapperRef}>

@@ -10,7 +10,7 @@ import Mission from "../components/hero/mission/Mission";
 import Portfolio from "../components/portfolio/Portfolio";
 import BookMessage from '../common/BookMessage'
 
-export default function Home ({ menuIsOpen, setMenuIsOpen, doUnmountAnimation, setDoUnmountAnimation }){
+export default function Home ({ menuIsOpen, setMenuIsOpen }){
     return(
         <div className="home">
             <Helmet>
@@ -28,7 +28,7 @@ export default function Home ({ menuIsOpen, setMenuIsOpen, doUnmountAnimation, s
                 <meta name="twitter:description" content='We are Aegis, a web design studio based in Leicester - We design innovative solutions for your business. Explore our portfolio and services.' />
                 {/* <meta name="twitter:image" content="https://www.example.com/images/twitter-card-image.jpg" /> */}
             </Helmet>
-            <Nav menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} doUnmountAnimation={doUnmountAnimation} setDoUnmountAnimation={setDoUnmountAnimation} />
+            <Nav menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} bg='transparent' />
             <Hero />
             <Intro />
             <Services />

@@ -1,5 +1,6 @@
 .contact-content{
     padding: 4em 2em;
+    padding-top: 8em;
     display: flex;
     flex-direction: column;
     gap: 4em;
@@ -68,4 +69,38 @@
     border: 1px solid white;
     color: white;
     background: transparent;
+}
+
+
+@media only screen and (max-width: 980px){
+    
+}
+
+@media only screen and (max-width: 480px){
+    .contact-content{
+        padding: 1em;
+        padding-top: 8em;
+    }
+    .contact-content h1{
+        font-size: 2rem;
+        text-align: left;
+    }
+    .contact-content-top h5{
+        text-align: left;
+    }
+    .contact-content-top p{
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .contact-content-info{
+        flex-direction: column;
+    }
+    .contact-content-info > div{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    
 }
