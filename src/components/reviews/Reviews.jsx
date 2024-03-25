@@ -13,7 +13,7 @@ export default function Reviews (){
     return(
         <div className="reviews">
             <h2>Our reviews</h2>
-            <p>See what our customers say about us. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, quod?</p>
+            <p>See what our customers say about us.</p>
 
             <div className="reviews-cards">
                 <div className="card">

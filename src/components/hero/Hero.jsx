@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
 import './hero.css'
 
-import cover from '../../assets/cover.png'
+import cover from '../../assets/cover2.png'
 
 export default function Hero (){
     const wrapperRef = useRef(null);

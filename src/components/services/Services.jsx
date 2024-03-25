@@ -74,9 +74,9 @@ export default function Services (){
 
     return(
         <section className="services" ref={wrapperRef}>
-            <div className="services-cover">
+            {/* <div className="services-cover">
                 <img src={cover} alt="" ref={coverRef} />
-            </div>
+            </div> */}
 
             <div className="services-title">
                 <h2>What services do we offer</h2>
@@ -120,8 +120,9 @@ export default function Services (){
                     <button className='main-btn'>Read more</button>
                 </div>
 
-                <div className="service">                 
-                    <span>04</span>
+                <div className="service">    
+                    <span><FaScissors /></span>             
+                    <small>04</small>
                     <p>Landscape Renovation and Enhancement</p>
                     <small>Revitalize your existing landscape with our renovation and enhancement services, which may include plantings, irrigation upgrades, lighting installations, and sustainable landscaping solutions to breathe new life into your outdoor space.</small>
                     <button className='main-btn'>Read more</button>

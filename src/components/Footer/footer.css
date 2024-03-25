@@ -3,7 +3,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background: white;
+    background: var(--bg);
 }
 
 .footer-top{

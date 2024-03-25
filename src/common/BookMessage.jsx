@@ -1,11 +1,18 @@
 import './common.css'
 
+import illust from '../assets/illust.png'
+
 export default function BookMessage (){
     return(
         <div className="book-message">
-            <h1>Let's work together</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, non reiciendis assumenda magnam animi minus.</p>
-            <button className='main-btn'>Book now</button>
+            <div className="book-message-img">
+                <img src={illust} alt="" />
+            </div>
+
+            <div className="book-message-content">
+                <h1>Does your garden need expert work?<br></br>Let's chat</h1>
+                <button className='main-btn'>Contact us</button>
+            </div>
         </div>
     )
 }

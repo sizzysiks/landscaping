@@ -3,7 +3,7 @@
     width: 100%;
     padding: 4em 2em;
     padding-right: 0;
-    background: #f1f1f1;
+    background: var(--bg);
     display: flex;
     flex-direction: column;
     gap: 2em;
@@ -29,7 +29,7 @@
     justify-content: space-between;
 }
 .services h2{
-    color: white;
+    color: var(--font-clr);
     font-weight: 500;
     font-size: 2rem;
 }
@@ -59,7 +59,6 @@
     border-radius: 10px;
     transform-origin: left;
     background: white;
-    border: 1px solid rgb(230, 230, 230);
 }
 .service-top{
     width: 100%;
@@ -129,12 +128,13 @@
 @media only screen and (max-width: 480px){
     .services{
         padding: 1em;
+        padding-right: 0;
     }
     .services h2{
         font-size: 1.5rem;
     }
     .service{
-        width: 100%;
+        width: calc(100% - 1em);
     }
     .service p{
         font-size: 1rem;

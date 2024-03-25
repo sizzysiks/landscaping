@@ -1,22 +1,45 @@
 .book-message{
-    background:black;
+    width: 100%;
+    position: relative;
     padding: 4em;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
+.book-message-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.book-message-img img{
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.book-message-content{
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
 .book-message h1{
-    color: white;
-    font-size: 3rem;
-    font-weight: 500;
+    color: var(--font-clr);
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1em;
 }
 .book-message p{
     color: white;
     line-height: 1.2em;
 }
 .book-message button{
-    background: white;
-    color: black;
+    background: var(--blue-dark);
+    color: white;
 }
 
 /* MEDIA QUERIES */
@@ -27,27 +50,16 @@
 @media only screen and (max-width: 480px){
     .book-message{
         padding: 4em 1em;
+        flex-direction: column-reverse;
     }
-    .reviews{
-        flex-direction: column;
-        height: max-content;
-    }
-    .reviews-content{
+    .book-message-content{
         width: 100%;
-        padding: 1em;
     }
-    .reviews-content > div h3{
-        font-size: 3rem;
+    .book-message-img{
+        position: relative;
     }
-    .reviews-content p{
-        font-size: 1rem;
-    }
-    .reviews-img{
-        width: 100%;
-        height: 50vh;
-    }
-    .review-icon-img{
-        width: 100%;
+    .book-message-img img{
+        height: 300px;
     }
 }
 
